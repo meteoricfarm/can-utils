@@ -39,6 +39,9 @@ jobs:
           
           ### Mark build status if policy-violating issues are found
           mark_build_status: 'success'
+
+          coverity_build_command: bash -c "cmake -S . -B build && cmake --build build"
+          coverity_clean_command: bash -c "cmake -S . -B build && cmake --build build --target clean"
           
     ### Uncomment below configuration to add custom logic based on return status
     # - name: cmdLine
